@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Leaderboard</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+			integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+			integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+			crossorigin="anonymous"
+		></script>
+		<link href="libs/jsonTree/jsonTree.css" rel="stylesheet" />
+		<script src="libs/jsonTree/jsonTree.js"></script>
+	</head>
+	<body>
+		<div class="px-5">
+			<div class="d-flex justify-content-between">
+				<a class="btn btn-primary m-2" href="/">Go to table</a>
+			</div>
+			<h1 class="h1 my-5">/API</h1>
+			<div class="accordion" id="accordionExample">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingOne">
+						<button
+							class="accordion-button"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapseOne"
+							aria-expanded="true"
+							aria-controls="collapseOne"
+						>
+							GET students
+						</button>
+					</h2>
+					<div
+						id="collapseOne"
+						class="accordion-collapse collapse"
+						data-bs-parent="#accordionExample"
+					>
+						<div class="accordion-body">
+							<button
+								id="get-students"
+								class="btn btn-primary mb-4"
+							>
+								Get students
+							</button>
+							<code id="get-students-data"></code>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingTwo">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapseTwo"
+							aria-expanded="false"
+							aria-controls="collapseTwo"
+						>
+							POST insert student
+						</button>
+					</h2>
+					<div
+						id="collapseTwo"
+						class="accordion-collapse collapse"
+						aria-labelledby="headingTwo"
+						data-bs-parent="#accordionExample"
+					>
+						<div class="accordion-body">
+							<form id="insert-student-form">
+								<div class="mb-3">
+									<label
+										for="exampleInputEmail1"
+										class="form-label"
+										>Name</label
+									>
+									<input
+										type="text"
+										class="form-control"
+										name="name"
+									/>
+								</div>
+								<div class="mb-3">
+									<label for="points" class="form-label"
+										>Points</label
+									>
+									<input
+										type="number"
+										class="form-control"
+										name="points"
+									/>
+								</div>
+								<button
+									type="submit"
+									class="btn btn-primary mb-4"
+								>
+									Submit
+								</button>
+								<code id="insert-student-data"></code>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingThree">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapseThree"
+							aria-expanded="false"
+							aria-controls="collapseThree"
+						>
+							PUT update student points
+						</button>
+					</h2>
+					<div
+						id="collapseThree"
+						class="accordion-collapse collapse"
+						data-bs-parent="#accordionExample"
+					>
+						<div class="accordion-body">
+							<form id="update-student-form">
+								<div class="mb-3">
+									<label
+										for="exampleInputEmail1"
+										class="form-label"
+										>Name</label
+									>
+									<input
+										type="text"
+										class="form-control"
+										name="name"
+									/>
+								</div>
+								<div class="mb-3">
+									<label for="points" class="form-label"
+										>Points</label
+									>
+									<input
+										type="number"
+										class="form-control"
+										name="points"
+									/>
+								</div>
+								<button
+									type="submit"
+									class="btn btn-primary mb-4"
+								>
+									Submit
+								</button>
+								<code id="update-student-data"></code>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingFour">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapseFour"
+							aria-expanded="false"
+							aria-controls="collapseFour"
+						>
+							DELETE student
+						</button>
+					</h2>
+					<div
+						id="collapseFour"
+						class="accordion-collapse collapse"
+						data-bs-parent="#accordionExample"
+					>
+						<div class="accordion-body">
+							<form id="delete-student-form">
+								<div class="mb-3">
+									<label class="form-label">Name</label>
+									<input
+										type="text"
+										class="form-control"
+										name="name"
+									/>
+								</div>
+								<button
+									type="submit"
+									class="btn btn-primary mb-4"
+								>
+									Submit
+								</button>
+								<code id="delete-student-data"></code>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingFive">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapseFive"
+							aria-expanded="false"
+							aria-controls="collapseFive"
+						>
+							GET student by name
+						</button>
+					</h2>
+					<div
+						id="collapseFive"
+						class="accordion-collapse collapse"
+						aria-labelledby="headingFive"
+						data-bs-parent="#accordionExample"
+					>
+						<div class="accordion-body">
+							<form id="single-student-form">
+								<div class="mb-3">
+									<label class="form-label">Name</label>
+									<input
+										type="text"
+										class="form-control"
+										name="name"
+									/>
+								</div>
+								<button
+									type="submit"
+									class="btn btn-primary mb-4"
+								>
+									Submit
+								</button>
+								<code id="single-student-data"></code>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		function makeTree(wrapperId, data) {
+			const wrapper = document.getElementById(wrapperId);
+			wrapper.textContent = '';
+
+			const tree = jsonTree.create(data, wrapper);
+			tree.expand();
+		}
+
+		async function insertStudent(ev) {
+			ev.preventDefault();
+			const name = ev.target.name;
+			const points = ev.target.points;
+
+			const student = {
+				name: name.value,
+				points: points.value,
+			};
+
+			const res = await fetch(`${window.location.origin}/api`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json;charset=utf-8',
+				},
+				body: JSON.stringify(student),
+			}).then(x => x.json());
+
+			makeTree('insert-student-data', res);
+			name.value = '';
+			points.value = '';
+		}
+
+		async function updateStudentScore(ev) {
+			ev.preventDefault();
+			const name = ev.target.name;
+			const points = ev.target.points;
+			const student = {
+				name: name.value,
+				points: points.value,
+			};
+
+			const res = await fetch(`${window.location.origin}/api`, {
+				method: 'PUT',
+				headers: {
+					'Content-Type': 'application/json;charset=utf-8',
+				},
+				body: JSON.stringify(student),
+			}).then(x => x.json());
+
+			makeTree('update-student-data', res);
+			name.value = '';
+			points.value = '';
+		}
+
+		async function deleteStudentScore(ev) {
+			ev.preventDefault();
+			const name = ev.target.name;
+			const student = {
+				name: name.value,
+			};
+
+			const res = await fetch(`${window.location.origin}/api`, {
+				method: 'DELETE',
+				headers: {
+					'Content-Type': 'application/json;charset=utf-8',
+				},
+				body: JSON.stringify(student),
+			}).then(x => x.json());
+
+			makeTree('delete-student-data', res);
+
+			name.value = '';
+		}
+
+		async function fetchStudents(ev) {
+			const students = await fetch(`${window.location.origin}/api`).then(
+				x => x.json()
+			);
+
+			makeTree('get-students-data', students);
+		}
+
+		async function fetchSingleStudent(ev) {
+			ev.preventDefault();
+			const name = ev.target.name;
+			const student = await fetch(
+				`${window.location.origin}/api/${name.value}`
+			).then(x => x.json());
+
+			name.value = '';
+			makeTree('single-student-data', student);
+		}
+
+		const getStudentsButton = document.getElementById('get-students');
+
+		const insertStudentForm = document.getElementById(
+			'insert-student-form'
+		);
+
+		const updateStudentForm = document.getElementById(
+			'update-student-form'
+		);
+
+		const deleteStudentForm = document.getElementById(
+			'delete-student-form'
+		);
+
+		const singleStudentForm = document.getElementById(
+			'single-student-form'
+		);
+
+		getStudentsButton.addEventListener('click', fetchStudents);
+		insertStudentForm.addEventListener('submit', insertStudent);
+		updateStudentForm.addEventListener('submit', updateStudentScore);
+		deleteStudentForm.addEventListener('submit', deleteStudentScore);
+		singleStudentForm.addEventListener('submit', fetchSingleStudent);
+	</script>
+</html>
